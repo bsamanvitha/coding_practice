@@ -29,7 +29,9 @@ def paren_checker(input):
             counter['('] -= 1
         if i == '}':
             counter['{'] -= 1
-    print counter
+    for val in counter.values():
+        if val != 0:
+            return "not balanced" + " " + input
     return "balanced" + " " + input
 print paren_checker(input1)
 print paren_checker(input2)
