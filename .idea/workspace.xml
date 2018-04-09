@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a9f361f-586b-4625-9268-885c47687768" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/String/5_romanNumToInt.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/String/6_checkAnagram.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/String/.idea/workspace.xml" afterPath="$PROJECT_DIR$/String/.idea/workspace.xml" />
     </list>
     <ignored path="coding_practice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,11 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="5_romanNumToInt.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="5_romanNumToInt.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/String/5_romanNumToInt.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="279">
               <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="6_checkAnagram.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/String/6_checkAnagram.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -53,6 +62,7 @@
         <option value="$PROJECT_DIR$/String/2_reverseWords.py" />
         <option value="$PROJECT_DIR$/String/example.py" />
         <option value="$PROJECT_DIR$/String/5_romanNumToInt.py" />
+        <option value="$PROJECT_DIR$/String/6_checkAnagram.py" />
       </list>
     </option>
   </component>
@@ -120,7 +130,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.5_romanNumToInt">
+  <component name="RunManager" selected="Python.6_checkAnagram">
     <configuration default="false" name="1_parenthesesChecker" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -185,6 +195,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="coding_practice" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/String/5_romanNumToInt.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="6_checkAnagram" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/String" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="coding_practice" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/String/6_checkAnagram.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -323,18 +350,20 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.1_parenthesesChecker" />
       <item index="1" class="java.lang.String" itemvalue="Python.2_reverseWords" />
       <item index="2" class="java.lang.String" itemvalue="Python.example" />
       <item index="3" class="java.lang.String" itemvalue="Python.5_romanNumToInt" />
+      <item index="4" class="java.lang.String" itemvalue="Python.6_checkAnagram" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.5_romanNumToInt" />
-        <item index="1" class="java.lang.String" itemvalue="Python.example" />
-        <item index="2" class="java.lang.String" itemvalue="Python.2_reverseWords" />
-        <item index="3" class="java.lang.String" itemvalue="Python.1_parenthesesChecker" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.6_checkAnagram" />
+        <item index="1" class="java.lang.String" itemvalue="Python.5_romanNumToInt" />
+        <item index="2" class="java.lang.String" itemvalue="Python.example" />
+        <item index="3" class="java.lang.String" itemvalue="Python.2_reverseWords" />
+        <item index="4" class="java.lang.String" itemvalue="Python.1_parenthesesChecker" />
       </list>
     </recent_temporary>
   </component>
@@ -469,6 +498,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/String/6_checkAnagram.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
           <folding />
         </state>
       </provider>
