@@ -13,11 +13,12 @@ public class _1_LinkedList {
 		list.prepend(13);
 		list.prepend(15);
 		list.append(8);
-		list.deleteLast();
 		list.deleteAt(11);
 		list.deleteAfter(7);
 		list.deleteBefore(7);
+		list.insertAfter(7, 5);
 		list.printList();
+		
 	
 	}
 }
@@ -83,6 +84,36 @@ class LinkedList {
 			current = current.next;
 		}
 	}
+	
+	/*
+	 * Insert node with value e after node with value d
+	 */
+	public void insertAfter(int d, int e) {
+		Node newNode = new Node(e);
+		Node current = first;
+		if (current == null) {
+			current = newNode;
+		}
+		else {
+			while (current.data != d) {
+				current = current.next;
+			}
+			Node newpointer = current.next;
+			current.next = newNode;
+			newNode.next = newpointer;
+		}
+	}
+	
+	/*
+	 * Insert node before a given value
+	 */
+	public void insertBefore(int d) {
+		
+	}
+	
+	/*
+	 * Replace a node at a given value
+	 */
 	
 	/*
 	 * append inserts an element at the end of the linkedlist
@@ -171,6 +202,5 @@ class LinkedList {
 			return toRemove;
 		}
 	}
-	
 	
 }
