@@ -1,3 +1,5 @@
+import org.omg.CORBA.Current;
+
 /**
  * 
  * @author Samanvitha Basole
@@ -17,9 +19,9 @@ public class _1_LinkedList {
 		list.deleteAfter(7);
 		list.deleteBefore(7);
 		list.insertAfter(7, 5);
+		list.insertAfter(7, 5);
 		list.printList();
-		
-	
+		System.out.println(list.size());
 	}
 }
 
@@ -107,13 +109,32 @@ class LinkedList {
 	/*
 	 * Insert node before a given value
 	 */
-	public void insertBefore(int d) {
+	public void insertBefore(int d, int e) {
 		
 	}
 	
 	/*
 	 * Replace a node at a given value
 	 */
+	public void replace(int d, int e) {
+		
+	}
+	
+	/*
+	 * returns the size of the LinkedList
+	 */
+	public int size() {
+		Node current = first;
+		int count = 0;
+		if (first == null) {
+			return count;
+		}
+		while (current != null) {
+			current = current.next;
+			count += 1;
+		}
+		return count;
+	}
 	
 	/*
 	 * append inserts an element at the end of the linkedlist
