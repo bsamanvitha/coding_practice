@@ -16,6 +16,7 @@ public class _1_LinkedList {
 		list.deleteLast();
 		list.deleteAt(11);
 		list.deleteAfter(7);
+		list.deleteBefore(7);
 		list.printList();
 	
 	}
@@ -151,10 +152,24 @@ class LinkedList {
 	}
 	
 	/*
-	 * deleteBefore deletes the node after a given value
+	 * deleteBefore deletes the node before a given value
 	 */
-	public Node deleteBefore() {
-		return null;
+	public Node deleteBefore(int d) {
+		Node current = first;
+		if (current == null) {
+			return null;
+		}
+		else if (current.next == null) {
+			return null;
+		}
+		else {
+			while (current.next.next.data != d) {
+				current = current.next;
+			}
+			Node toRemove = current.next;
+			current.next = current.next.next;
+			return toRemove;
+		}
 	}
 	
 	
