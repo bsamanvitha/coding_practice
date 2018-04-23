@@ -20,6 +20,7 @@ public class _1_LinkedList {
 		list.deleteBefore(7);
 		list.insertAfter(7, 5);
 		list.insertAfter(7, 5);
+		list.replace(5, 4);
 		list.printList();
 		System.out.println(list.size());
 	}
@@ -114,10 +115,24 @@ class LinkedList {
 	}
 	
 	/*
-	 * Replace a node at a given value
+	 * Replace a node at a given value - only the first occurrence
 	 */
 	public void replace(int d, int e) {
-		
+		Node newNode = new Node(e);
+		Node current = first;
+		if (current == null) {
+			first = newNode;
+		}
+		else if (current.data == d) {
+			first = newNode;
+		}
+		else {
+			while (current.next.data != d) {
+				current = current.next;
+			}
+			newNode.next = current.next.next;
+			current.next = newNode;
+		}
 	}
 	
 	/*
