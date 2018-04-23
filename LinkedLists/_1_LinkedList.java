@@ -15,6 +15,7 @@ public class _1_LinkedList {
 		list.append(8);
 		list.deleteLast();
 		list.deleteAt(11);
+		list.deleteAfter(7);
 		list.printList();
 	
 	}
@@ -134,8 +135,19 @@ class LinkedList {
 	/*
 	 * deleteAfter deletes the node after a given value
 	 */
-	public Node deleteAfter() {
-		return null;
+	public Node deleteAfter(int d) {
+		Node current = first;
+		if (current == null) {
+			return null;
+		}
+		else {
+			while (current.data != d) {
+				current = current.next;
+			}
+			Node toRemove = current.next;
+			current.next = current.next.next;
+			return toRemove;
+		}
 	}
 	
 	/*
