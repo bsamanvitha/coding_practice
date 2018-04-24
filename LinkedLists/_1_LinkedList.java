@@ -20,6 +20,7 @@ public class _1_LinkedList {
 		list.insertAfter(7, 5);
 		list.replace(5, 4);
 		list.insertBefore(3, 10);
+		list.deleteGivenIndex(2);
 		list.printList();
 		System.out.println(list.size());
 	}
@@ -247,6 +248,29 @@ class LinkedList {
 			current.next = current.next.next;
 			return toRemove;
 		}
+	}
+	
+	/*
+	 * deletes a node at the given index in the linkedlist
+	 */
+	public Node deleteGivenIndex(int index) {
+		int counter = 0;
+		Node current = first;
+		if (first == null) {
+			return null;
+		}
+		if (index == 0) {
+			Node toRemove = first;
+			first = first.next;
+			return toRemove;
+		}
+		while (counter + 1 != index) {
+			current = current.next;
+			counter += 1;
+		}
+		Node toRemove = current.next;
+		current.next = current.next.next;
+		return toRemove;
 	}
 	
 }
