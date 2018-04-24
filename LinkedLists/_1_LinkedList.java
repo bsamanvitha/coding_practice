@@ -21,6 +21,7 @@ public class _1_LinkedList {
 		list.replace(5, 4);
 		list.insertBefore(3, 10);
 		list.deleteGivenIndex(2);
+		list.findSize();
 		list.printList();
 		System.out.println(list.size());
 	}
@@ -160,6 +161,19 @@ class LinkedList {
 			count += 1;
 		}
 		return count;
+	}
+	
+	/*
+	 * Recursively find length
+	 */
+	public void findSize() {
+		System.out.println("Size is: " + findSize(first));
+	}
+	public int findSize(Node current) {
+		if (current == null) {
+			return 0;
+		}
+		return findSize(current.next) + 1;
 	}
 	
 	/*
