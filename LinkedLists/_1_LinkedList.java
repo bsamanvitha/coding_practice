@@ -25,6 +25,7 @@ public class _1_LinkedList {
 		list.printList();
 		System.out.println(list.size());
 		System.out.println(list.checkElement(3));
+		System.out.println(list.checkEle(31));
 	}
 }
 
@@ -302,5 +303,21 @@ class LinkedList {
 		return false;
 	}
 
+	/*
+	 * Check if an element exists recursively
+	 */
+	public boolean checkEle(int d) {
+		return checkEle(first, d);
+	}
+	
+	public boolean checkEle(Node current, int d) {
+		if (current == null) {
+			return false;
+		}
+		if (current.data == d) {
+			return true;
+		}
+		return checkEle(current.next, d);
+	}
 	
 }
