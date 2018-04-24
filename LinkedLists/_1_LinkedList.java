@@ -24,6 +24,7 @@ public class _1_LinkedList {
 		list.findSize();
 		list.printList();
 		System.out.println(list.size());
+		System.out.println(list.checkElement(3));
 	}
 }
 
@@ -86,6 +87,24 @@ class LinkedList {
 		while (current != null) {
 			current.display();
 			current = current.next;
+		}
+	}
+	
+	/*
+	 * append inserts an element at the end of the linkedlist
+	 */
+	public void append(int d) {
+		Node newNode = new Node(d);
+		Node current = first;
+		if (current == null) {
+			first = newNode;
+		}
+		else {
+			while (current.next != null) {
+				current = current.next;
+			}
+			current.next = newNode;
+			newNode.next = null;
 		}
 	}
 	
@@ -174,24 +193,6 @@ class LinkedList {
 			return 0;
 		}
 		return findSize(current.next) + 1;
-	}
-	
-	/*
-	 * append inserts an element at the end of the linkedlist
-	 */
-	public void append(int d) {
-		Node newNode = new Node(d);
-		Node current = first;
-		if (current == null) {
-			first = newNode;
-		}
-		else {
-			while (current.next != null) {
-				current = current.next;
-			}
-			current.next = newNode;
-			newNode.next = null;
-		}
 	}
 	
 	/*
@@ -286,5 +287,20 @@ class LinkedList {
 		current.next = current.next.next;
 		return toRemove;
 	}
+	
+	/*
+	 * Check if an element exists
+	 */
+	public boolean checkElement(int d) {
+		Node current = first;
+		while (current != null) {
+			if (d == current.data) {
+				return true;
+			}
+			current = current.next;
+		}
+		return false;
+	}
+
 	
 }
