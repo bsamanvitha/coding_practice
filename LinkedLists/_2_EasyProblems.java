@@ -14,7 +14,7 @@ public class _2_EasyProblems {
 		list.prepend(12);
 		list.prepend(14);
 		list.prepend(16);
-		list.swapAfter(8);
+		list.swapAfter(4);
 		list.printList();
 		list.deleteLinkedList();
 		list.printList();
@@ -37,17 +37,43 @@ class LinkedList2 extends LinkedList {
 	/*
 	 * swap the node with the one after it
 	 */
-	public void swapAfter(int d) {
-		if (first != null && first.next != null) {
+	public boolean swapAfter(int d) {
+		if (first != null) {
 			Node current = first;
+			if (current.data == d) {
+				// only one node exists
+				if (current.next == null) {
+					return false;
+				}
+				//two nodes exist
+				else if (current.next.next == null) {
+					Node tmp = current.next;
+					current.next.next = current;
+					first = tmp;
+					first.next.next = null;
+					return true;
+				}
+				//more than two nodes exist
+				else { 
+					Node tmp = current.next;
+					current.next = current.next.next;
+					tmp.next = current;
+					first = tmp;
+					return true;
+				}
+			}
 			while (current.next.data != d) {
 				current = current.next;
+			} 
+			if (current.next != null && current.next.next != null) {
+				Node tmp = current.next.next;
+				current.next.next = current.next.next.next;
+				tmp.next = current.next;
+				current.next = tmp;
+				return true;
 			}
-			Node tmp = current.next.next;
-			current.next.next = current.next.next.next;
-			tmp.next = current.next;
-			current.next = tmp;
 		}
+		return false;
 	}
 	
 	/*
