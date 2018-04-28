@@ -42,7 +42,7 @@ class Node {
 
 class LinkedList {
 	
-	private Node first;
+	Node first;
 	
 	public LinkedList() {
 		first = null;
