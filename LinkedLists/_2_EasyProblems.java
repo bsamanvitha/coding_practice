@@ -77,6 +77,13 @@ class LinkedList2 extends LinkedList {
 	}
 	
 	/*
+	 * swap the given node with the one before it
+	 */
+	public boolean swapBefore(int d) {
+		return false;
+	}
+	
+	/*
 	 * given two keys, swap nodes without swapping data
 	 * https://www.geeksforgeeks.org/swap-nodes-in-a-linked-list-without-swapping-data/
 	 */
