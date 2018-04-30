@@ -1,13 +1,13 @@
 
-public class ArrayStack {
+public class _1_ArrayStack {
 	private static final int totalSize = 15;
 	private int top; //index of the top element
 	private Node[] stack;
 	
-	public ArrayStack() {
+	public _1_ArrayStack() {
 		this(totalSize);
 	}
-	public ArrayStack(int initialSize) {
+	public _1_ArrayStack(int initialSize) {
 		if (initialSize <= 0) {
 			stack = new Node[totalSize];
 		}
@@ -65,7 +65,7 @@ public class ArrayStack {
 	}
 	
 	public static void main(String[] args) throws Exception {
-		ArrayStack stack = new ArrayStack();
+		_1_ArrayStack stack = new _1_ArrayStack();
 		stack.push(new Node(3));
 		stack.push(new Node(6));
 		stack.push(new Node(9));
@@ -81,6 +81,7 @@ public class ArrayStack {
 
 class Node {
 	int data;
+	Node next;
 	public Node(int data) {
 		this.data = data;
 	}
