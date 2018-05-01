@@ -38,6 +38,10 @@ class Node {
 	public void display() {
 		System.out.println("Data: " + data);
 	}
+	public String toString() {
+		return "Data: " + data;
+	}
+	
 }
 
 class LinkedList {

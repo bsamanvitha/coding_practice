@@ -6,19 +6,24 @@ public class _2_EasyProblems {
 	
 	public static void main(String[] args) {
 		LinkedList2 list = new LinkedList2();
+		list.prepend(1);
 		list.prepend(2);
+		list.prepend(3);
 		list.prepend(4);
+		list.prepend(5);
 		list.prepend(6);
-		list.prepend(8);
-		list.prepend(10);
-		list.prepend(12);
-		list.prepend(14);
-		list.prepend(16);
-		list.swapAfter(4);
+		//list.swapAfter(4);
+		//list.printList();
+		//list.deleteLinkedList();
 		list.printList();
-		list.deleteLinkedList();
+		//list.printMiddle();
+		list.printNthFromEnd(5);
+		System.out.println(list.occurrences(5));
+		System.out.println(list.frequency(3));
+		System.out.println("------------------------\nActual:");
 		list.printList();
-		
+		System.out.println("------------------------\nReverse: ");
+		System.out.println(list.printReverse());
 	}
 }
 class LinkedList2 extends LinkedList {
@@ -107,5 +112,78 @@ class LinkedList2 extends LinkedList {
 		a_node.next = point2;
 		y.next = a_node;
 	}
+	
+	/*
+	 * prints the middle node in a linkedlist
+	 */
+	public void printMiddle() {
+		Node mid = first;
+		Node end = first;
+		while (end != null && end.next != null) {
+			end = end.next.next;
+			mid = mid.next;
+		}
+		mid.display();
+	}
+	
+	/*
+	 * prints the nth node from the end of the linkedlist
+	 * naive approach - count length, len-n+1 formula
+	 */
+	public void printNthFromEnd(int n) {
+		Node nth = first;
+		Node end = first;
+		for (int i = 0; i < n; i++) {
+			end = end.next;
+		}
+		while (end != null) {
+			end = end.next;
+			nth = nth.next;
+		}
+		nth.display();
+	}
+	
+	/*
+	 * return the number of times an int occurs in a list
+	 */
+	public int occurrences(int d) {
+		Node current = first;
+		int count = 0;
+		while (current != null) {
+			if (current.data == d) {
+				count += 1;
+			}
+			current = current.next;
+		}
+		return count;
+	}
+	
+	public int frequency(int d) {
+		return frequency(d, first);
+	}
+	public int frequency(int d, Node n) {
+		if (n == null) {
+			return 0;
+		}
+		else if (n.data == d) {
+			return 1 + frequency(d, n.next);
+		}
+		return frequency(d, n.next);
+	}
+	
+	/*
+	 * prints the reverse of a linkedlist without reversing it
+	 */
+	public String printReverse() {
+		return printReverse(first);
+	}
+	public String printReverse(Node head) {
+		if (head != null) {
+			return printReverse(head.next) + head.toString() + "\n";
+		}
+		return null;
+	}
+	
+	
 	
 }
