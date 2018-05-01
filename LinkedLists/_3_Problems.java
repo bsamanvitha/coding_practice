@@ -14,9 +14,9 @@ class LinkedList3 extends LinkedList {
 	}
 	
 	/*
-	 * deleteLinkedList deletes a linkedlist
+	 * reverses a linkedlist
 	 */
-	public void deleteLinkedList() {
-		first = null;
+	public void reverseLL() {
+		
 	}
 }
