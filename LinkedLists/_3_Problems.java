@@ -4,11 +4,16 @@ public class _3_Problems {
 	public static void main(String[] args) {
 		LinkedList3 list = new LinkedList3();
 		list.prepend(1);
+		list.prepend(1);
+		list.prepend(1);
+		list.prepend(2);
 		list.prepend(2);
 		list.prepend(3);
-		list.prepend(2);
-		list.prepend(1);
 		System.out.println(list.isPalindrome());
+		list.printList();
+		list.removeDuplicatesFromSorted();
+		System.out.println("After deleting duplicates");
+		list.printList();
 	}
 }
 class LinkedList3 extends LinkedList {
@@ -43,5 +48,17 @@ class LinkedList3 extends LinkedList {
 			current = current.next;
 		}
 		return true;
+	}
+	
+	public void removeDuplicatesFromSorted() {
+		Node current = first;
+		while (current.next != null) {
+			if (current.data == current.next.data) {
+				current.next = current.next.next;
+			}
+			else {
+				current = current.next;
+			}
+		}
 	}
 }
