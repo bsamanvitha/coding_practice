@@ -1,3 +1,4 @@
+import java.util.HashSet;
 import java.util.Stack;
 
 public class _3_Problems {
@@ -10,6 +11,8 @@ public class _3_Problems {
 		list.prepend(4);
 		list.prepend(5);
 		list.prepend(6);
+		list.prepend(4);
+		list.prepend(5);
 		list2.append(9);
 		list2.append(8);
 		list2.append(7);
@@ -28,6 +31,7 @@ public class _3_Problems {
 		System.out.println("------------------");
 		list2.printList();
 		System.out.print("Intersection node is: " + list.intersectionOfTwoLists(list2));
+		System.out.println("\nLoop detected: " + list.detectLoop());
 	}
 }
 class LinkedList3 extends LinkedList {
@@ -86,5 +90,18 @@ class LinkedList3 extends LinkedList {
 			}
 		}
 		return null;
+	}
+	
+	public boolean detectLoop() {
+		HashSet<Integer> set = new HashSet<Integer>();
+		Node current = first;
+		while (current.next != null) {
+			if (set.contains(current.data)) {
+				return true;
+			}
+			set.add(current.data);
+			current = current.next;
+		}
+		return false;
 	}
 }
