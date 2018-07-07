@@ -5,7 +5,6 @@
 
 
 # check if palindrome or not
-
 def isPalindrome(input):
     revInput = input[::-1]
     if input == revInput:
@@ -19,3 +18,13 @@ def isPalindrome2(input):
             return False
     return True
 
+# remove spaces from the sentence and prepend those spaces
+def addSpacesToFront(input):
+    newInp = input.replace(" ", "")
+    spaces = len(input) - len(newInp)
+    addSpaces = " " * spaces
+    return addSpaces + newInp
+
+
+
+print(addSpacesToFront("hello how are you bye"))
