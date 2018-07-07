@@ -25,6 +25,18 @@ def addSpacesToFront(input):
     addSpaces = " " * spaces
     return addSpaces + newInp
 
+print (addSpacesToFront("hello how are you bye"))
 
+def checkHalves(input):
+    from collections import Counter
+    input1 = input[0:len(input)/2]
+    if len(input) % 2 == 0:
+        input2 = input[len(input)/2:]
+    else:
+        input2 = input[(len(input)+1) / 2:]
+    if Counter(input1) == Counter(input2):
+        return "Yes"
+    return "No"
 
-print(addSpacesToFront("hello how are you bye"))
+print (checkHalves("abba"))
+print (checkHalves("abccbba"))
