@@ -40,3 +40,11 @@ def checkHalves(input):
 
 print (checkHalves("abba"))
 print (checkHalves("abccbba"))
+
+# print second repeated word
+def secondRepeated(input):
+    from collections import Counter
+    counter = Counter(input)
+    return counter.most_common(2)[1][0]
+
+print (secondRepeated(('aaa', 'bbb', 'ccc', 'bbb', 'aaa', 'aaa')))
