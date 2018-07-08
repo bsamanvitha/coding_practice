@@ -15,6 +15,7 @@ public class _3_Problems {
 		list2.append(1);
 		list2.append(2);
 		list2.append(3);
+		list2.append(5);
 		list2.append(7);
 		list2.append(8);
 		list2.append(9);
@@ -34,6 +35,10 @@ public class _3_Problems {
 		System.out.println("------------------");
 		list.mergeSorted(list2);
 		list.printList();
+		System.out.println("------------------");
+		list.makeMiddleFirst();
+		list.printList();
+		
 	}
 }
 class LinkedList3 extends LinkedList {
@@ -138,7 +143,20 @@ class LinkedList3 extends LinkedList {
 				curr2 = curr2.next;
 			}
 		}
-		
-		
 	}
+	
+	public void makeMiddleFirst() {
+		Node curr = first;
+		Node fast = first;
+		fast = fast.next.next;
+		while (fast.next != null) {
+			fast = fast.next.next;
+			curr = curr.next;
+		}
+		Node middle = curr.next;
+		curr.next = curr.next.next;
+		middle.next = first;
+		first = middle;
+	}
+	
 }
