@@ -38,6 +38,10 @@ public class _3_Problems {
 		System.out.println("------------------");
 		list.makeMiddleFirst();
 		list.printList();
+		System.out.println("------------------");
+		list.insertFromEnd(33, 3);
+		list.printList();
+		
 		
 	}
 }
@@ -159,4 +163,17 @@ class LinkedList3 extends LinkedList {
 		first = middle;
 	}
 	
+	public void insertFromEnd(int x, int n) {
+		Node curr = first;
+		Node fast = first;
+		for (int i = 1; i < n; i++) {
+			fast = fast.next;
+		}
+		System.out.println(fast);
+		while (fast.next != null) {
+			fast = fast.next;
+			curr = curr.next;
+		}
+		insertAfter(curr.data, x);
+	}
 }
