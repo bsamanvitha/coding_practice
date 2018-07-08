@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a9f361f-586b-4625-9268-885c47687768" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/String/8_MoreStringOps.py" afterPath="$PROJECT_DIR$/String/8_MoreStringOps.py" />
-    </list>
+    <list default="true" id="7a9f361f-586b-4625-9268-885c47687768" name="Default" comment="" />
     <ignored path="coding_practice.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

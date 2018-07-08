@@ -5,20 +5,19 @@ public class _3_Problems {
 	public static void main(String[] args) {
 		LinkedList3 list = new LinkedList3();
 		LinkedList3 list2 = new LinkedList3();
-		list.prepend(1);
-		list.prepend(2);
-		list.prepend(3);
-		list.prepend(4);
-		list.prepend(5);
+		list.prepend(15);
+		list.prepend(12);
+		list.prepend(11);
+		list.prepend(10);
 		list.prepend(6);
 		list.prepend(4);
-		list.prepend(5);
-		list2.append(9);
-		list2.append(8);
-		list2.append(7);
-		list2.append(3);
-		list2.append(2);
+		
 		list2.append(1);
+		list2.append(2);
+		list2.append(3);
+		list2.append(7);
+		list2.append(8);
+		list2.append(9);
 		
 		/*
 		System.out.println(list.isPalindrome());
@@ -32,6 +31,9 @@ public class _3_Problems {
 		list2.printList();
 		System.out.print("Intersection node is: " + list.intersectionOfTwoLists(list2));
 		System.out.println("\nLoop detected: " + list.detectLoop());
+		System.out.println("------------------");
+		list.mergeSorted(list2);
+		list.printList();
 	}
 }
 class LinkedList3 extends LinkedList {
@@ -103,5 +105,40 @@ class LinkedList3 extends LinkedList {
 			current = current.next;
 		}
 		return false;
+	}
+	
+	public void mergeSorted(LinkedList3 anotherList) {
+		Node ptr = null;
+		Node curr1 = first;
+		Node curr2 = anotherList.first;
+		
+		if (curr2.data < curr1.data) {
+			ptr = curr2;
+			curr2 = curr2.next;
+			ptr.next = curr1;
+			curr1 = ptr;
+			first = ptr;
+		}
+
+		while (curr1 != null && curr2 != null) {
+			if (curr1.data < curr2.data) {
+				ptr = curr1;
+				curr1 = curr1.next;
+			}
+			else {
+				Node tmp = curr2.next;
+				this.insertAfter(ptr.data, curr2.data);
+				ptr = ptr.next;
+				curr2 = tmp;
+			}
+		}
+		if (curr1.next == null && curr2.next != null) {
+			while (curr2.next != null) {
+				this.insertAfter(curr2.data, curr2.data);
+				curr2 = curr2.next;
+			}
+		}
+		
+		
 	}
 }
