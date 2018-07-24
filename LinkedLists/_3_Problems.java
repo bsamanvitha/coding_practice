@@ -41,6 +41,12 @@ public class _3_Problems {
 		System.out.println("------------------");
 		list.insertFromEnd(33, 3);
 		list.printList();
+		System.out.println("------------------");
+		list.deleteMiddle();
+		list.printList();
+		System.out.println("------------------");
+		list.deleteMiddle();
+		list.printList();
 		
 		
 	}
@@ -169,11 +175,22 @@ class LinkedList3 extends LinkedList {
 		for (int i = 1; i < n; i++) {
 			fast = fast.next;
 		}
-		System.out.println(fast);
 		while (fast.next != null) {
 			fast = fast.next;
 			curr = curr.next;
 		}
 		insertAfter(curr.data, x);
+	}
+	
+	public void deleteMiddle() {
+		Node slow = first;
+		Node fast = first;
+		fast = fast.next.next;
+		while (fast != null && fast.next != null) {
+			slow = slow.next;
+			fast = fast.next.next;
+			System.out.println(fast.data);
+		}
+		slow.next = slow.next.next;
 	}
 }
