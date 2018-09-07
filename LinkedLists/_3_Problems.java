@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Set;
 import java.util.Stack;
 
 public class _3_Problems {
@@ -11,6 +12,7 @@ public class _3_Problems {
 		list.prepend(10);
 		list.prepend(6);
 		list.prepend(4);
+	
 		
 		list2.append(1);
 		list2.append(2);
@@ -35,17 +37,29 @@ public class _3_Problems {
 		System.out.println("------------------");
 		list.mergeSorted(list2);
 		list.printList();
+		
 		System.out.println("------------------");
 		list.makeMiddleFirst();
 		list.printList();
+	
 		System.out.println("------------------");
 		list.insertFromEnd(33, 3);
 		list.printList();
+		/**
 		System.out.println("------------------");
 		list.deleteMiddle();
 		list.printList();
 		System.out.println("------------------");
 		list.deleteMiddle();
+		list.printList();
+	**/
+		System.out.println("remove from unsorted------------------");
+		list.prepend(4);
+		list.prepend(6);
+		list.prepend(12);
+		list.printList();
+		list.removeDuplicatesFromUnsorted();
+		System.out.println("------------------");
 		list.printList();
 		
 		
@@ -93,6 +107,25 @@ class LinkedList3 extends LinkedList {
 			}
 			else {
 				current = current.next;
+			}
+		}
+	}
+	
+	public void removeDuplicatesFromUnsorted() {
+		//brute-force - two nested loops, pick one and check the entire LL for that element then delete
+		//another approach - sort but elements not in order, nlogn complexity
+		//use a set
+		Set<Node> set = new HashSet<>();
+		Node current = first;
+		Node previous = first;
+		while (current.next != null) {
+			if (!set.contains(current)) {
+				set.add(current);
+				previous = current;
+				current = current.next;
+			}
+			else {
+				previous.next = current.next;
 			}
 		}
 	}
