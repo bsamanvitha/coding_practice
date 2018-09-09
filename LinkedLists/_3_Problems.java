@@ -53,16 +53,6 @@ public class _3_Problems {
 		list.deleteMiddle();
 		list.printList();
 	**/
-		System.out.println("remove from unsorted------------------");
-		list.prepend(4);
-		list.prepend(6);
-		list.prepend(12);
-		list.printList();
-		list.removeDuplicatesFromUnsorted();
-		System.out.println("------------------");
-		list.printList();
-		
-		
 	}
 }
 class LinkedList3 extends LinkedList {
@@ -111,24 +101,6 @@ class LinkedList3 extends LinkedList {
 		}
 	}
 	
-	public void removeDuplicatesFromUnsorted() {
-		//brute-force - two nested loops, pick one and check the entire LL for that element then delete
-		//another approach - sort but elements not in order, nlogn complexity
-		//use a set
-		Set<Node> set = new HashSet<>();
-		Node current = first;
-		Node previous = first;
-		while (current.next != null) {
-			if (!set.contains(current)) {
-				set.add(current);
-				previous = current;
-				current = current.next;
-			}
-			else {
-				previous.next = current.next;
-			}
-		}
-	}
 	
 	public Node intersectionOfTwoLists(LinkedList3 list2) {
 		
