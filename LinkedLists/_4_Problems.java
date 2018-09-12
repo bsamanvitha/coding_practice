@@ -16,6 +16,11 @@ public class _4_Problems {
 		list.removeDuplicatesFromUnsorted();
 		System.out.println("------------------");
 		list.printList();
+		System.out.println("reverse------------------");
+		list.printList();
+		list.reverse();
+		System.out.println("------------------");
+		list.printList();
 	}
 }
 
@@ -48,5 +53,16 @@ class LinkedList4 extends LinkedList {
 		}
 	}
 	
+	public void reverse() {
+		Node curr = first;
+		Node prev = null;
+		while (curr != null) {
+			Node rest = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = rest;
+		}
+		first = prev;
+	}
 	
 }

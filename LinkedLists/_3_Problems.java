@@ -61,13 +61,6 @@ class LinkedList3 extends LinkedList {
 		super();
 	}
 	
-	/*
-	 * reverses a linkedlist
-	 */
-	public void reverseLL() {
-		
-	}
-	
 	public boolean isPalindrome() {
 		// push to stack
 		Stack<Node> s = new Stack<Node>();
