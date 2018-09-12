@@ -10,16 +10,22 @@ public class _4_Problems {
 		list.prepend(15);
 		list.prepend(10);
 		list.prepend(4);
+		list.prepend(6);
+		list.prepend(8);
+		list.prepend(2);
+		list.prepend(4);
+		list.prepend(5);
 		
-		System.out.println("remove from unsorted------------------");
+		
 		list.printList();
+		System.out.println("remove from unsorted------------------");
 		list.removeDuplicatesFromUnsorted();
-		System.out.println("------------------");
 		list.printList();
 		System.out.println("reverse------------------");
-		list.printList();
 		list.reverse();
-		System.out.println("------------------");
+		list.printList();
+		System.out.println("deleteAlternate------------------");
+		list.deleteAlternate();
 		list.printList();
 	}
 }
@@ -63,6 +69,17 @@ class LinkedList4 extends LinkedList {
 			curr = rest;
 		}
 		first = prev;
+	}
+	
+	public void deleteAlternate() {
+		if (first == null) {
+			return;
+		}
+		Node curr = first;
+		while (curr != null && curr.next != null) {
+			curr.next = curr.next.next;
+			curr = curr.next;
+		}
 	}
 	
 }
