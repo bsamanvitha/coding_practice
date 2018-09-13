@@ -4,17 +4,23 @@ import java.util.Set;
 public class _4_Problems {
 	public static void main(String[] args) {
 		LinkedList4 list = new LinkedList4();
+		
+		list.prepend(4);
+		list.prepend(6);
+		list.prepend(8);
+		list.prepend(22);
+		list.prepend(4);
+		list.prepend(5);
 		list.prepend(15);
 		list.prepend(12);
 		list.prepend(10);
 		list.prepend(15);
 		list.prepend(10);
-		list.prepend(4);
-		list.prepend(6);
-		list.prepend(8);
-		list.prepend(2);
-		list.prepend(4);
-		list.prepend(5);
+		list.prepend(3);
+		list.prepend(9);
+		list.prepend(1);
+		list.prepend(21);
+		list.prepend(23);
 		
 		
 		list.printList();
@@ -26,6 +32,9 @@ public class _4_Problems {
 		list.printList();
 		System.out.println("deleteAlternate------------------");
 		list.deleteAlternate();
+		list.printList();
+		System.out.println("deleteGreaterNodesOnRight------------------");
+		list.deleteNodesWithGreaterValueOnRight();
 		list.printList();
 	}
 }
@@ -81,5 +90,23 @@ class LinkedList4 extends LinkedList {
 			curr = curr.next;
 		}
 	}
+	
+	public void deleteNodesWithGreaterValueOnRight() {
+		//reverse it to check if right is smaller, then delete
+		reverse();
+		int max = first.data;
+		Node curr = first;
+		while (curr != null && curr.next != null) {
+			if (curr.next.data > max) {
+				max = curr.next.data;
+				curr = curr.next;
+			}
+			else {
+				curr.next = curr.next.next;
+			}
+		}
+		reverse();
+	}
+	
 	
 }
