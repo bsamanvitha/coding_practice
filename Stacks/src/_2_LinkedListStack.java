@@ -54,3 +54,5 @@ public class _2_LinkedListStack {
 		System.out.println(stack.toString());
 	}
 }
+
+
