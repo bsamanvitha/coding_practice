@@ -15,17 +15,17 @@ public class _2_LinkedListStack {
 		top = d;
 		return true;
 	}
-	public Node pop() throws Exception {
+	public Node pop() {
 		if (isEmpty()) {
-			throw new Exception("Empty!");
+			return null;
 		}
 		Node d = top;
 		top = top.next;
 		return d;
 	}
-	public Node peek() throws Exception {
+	public Node peek() {
 		if (isEmpty()) {
-			throw new Exception("Empty!");
+			return null;
 		}
 		return top;
 	}
@@ -40,18 +40,6 @@ public class _2_LinkedListStack {
 			current = current.next;
 		}
 		return toReturn + "\n" + "......................................................................";
-	}
-	public static void main(String[] args) throws Exception {
-		_2_LinkedListStack stack = new _2_LinkedListStack();
-		stack.push(new Node(3));
-		stack.push(new Node(6));
-		stack.push(new Node(9));
-		stack.push(new Node(12));
-		stack.push(new Node(15));
-		System.out.println("After pushing 3, 6, 9, 12, 15");
-		System.out.println(stack.toString());
-		System.out.println("After popping last 2 elements: " + stack.pop() + ", " + stack.pop());
-		System.out.println(stack.toString());
 	}
 }
 

@@ -1,7 +1,7 @@
 
 public class _1_QueueProblems {
 	public static void main(String[] args) throws Exception {
-		LinkedListQueue queue = new LinkedListQueue();
+		LLQ queue = new LLQ();
 		queue.enqueue(new Node(3));
 		queue.enqueue(new Node(6));
 		queue.enqueue(new Node(9));
@@ -13,5 +13,21 @@ public class _1_QueueProblems {
 		queue.dequeue();
 		queue.dequeue();
 		System.out.println(queue.toString());
+		
+		LLQ var = new LLQ(); 
+		
+		var.enqueue(new Node(3));
+		var.enqueue(new Node(6));
+		var.enqueue(new Node(9));
+		System.out.println(var.toString());
+		System.out.println(var.toString());
 	}
+	
+}
+class LLQ extends LinkedListQueue {
+	
+	public LLQ() {
+		super();
+	}
+	
 }

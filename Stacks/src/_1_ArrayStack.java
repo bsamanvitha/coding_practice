@@ -80,12 +80,12 @@ public class _1_ArrayStack {
 }
 
 class Node {
-	int data;
+	Object data;
 	Node next;
-	public Node(int data) {
+	public Node(Object data) {
 		this.data = data;
 	}
 	public String toString() {
-		return "Node: " + data; 
+		return data.toString(); 
 	}
 }

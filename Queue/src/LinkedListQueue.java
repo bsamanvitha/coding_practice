@@ -1,16 +1,19 @@
 
 public class LinkedListQueue {
-	private Node front;
-	private Node last;
+	public Node front;
+	public Node last;
+	public int size;
 	public LinkedListQueue() {
 		front = null;
 		last = null;
+		size = 0;
 	}
 	public boolean isEmpty() {
 		return front == null;
 	}
 	public void removeAll() {
 		front = null;
+		size = 0;
 	}
 	public boolean enqueue(Node d) {
 		if (front == null) {
@@ -20,14 +23,20 @@ public class LinkedListQueue {
 			last.next = d;
 			last = d;
 		}
+		size += 1;
 		return true;
 	}
-	public Node dequeue() throws Exception {
+	
+	public int size() {
+		return size;
+	}
+	public Node dequeue() {
 		if (isEmpty()) {
-			throw new Exception("Empty!");
+			return null;
 		}
 		Node d = front;
 		front = front.next;
+		size -= 1;
 		return d;
 	}
 
