@@ -1,3 +1,4 @@
+import java.util.Stack;
 
 public class _3_StackProblems {
 	public static void main(String[] args) throws Exception {
@@ -14,6 +15,11 @@ public class _3_StackProblems {
 		Stack2 s = new Stack2();
 		//System.out.println(s.infixToPostfix("a+b*c+d"));
 		System.out.println(s.infixToPostfix("a+b*(c^d-e)^(f+g*h)-i"));
+		int[] stocks = new int[]{100, 80, 60, 70, 60, 75, 85}; 
+		int[] span = new int[stocks.length];
+		stack.stockSpan(stocks, span); 
+		System.out.println();
+		stack.stockSpan2(stocks, span);
 	}
 	
 }
@@ -84,6 +90,46 @@ class Stack2 extends _2_LinkedListStack {
         }
 		return 0; 
 	}
+	
+	// naive approach - O(n^2) due to 2 loops
+	public void stockSpan(int[] stocks, int[] span) {
+		span[0] = 1;
+		for (int i = 1; i < stocks.length; i++) {
+			span[i] = 1;
+			int j = i - 1;
+			while (j != 0 && stocks[j] < stocks[i]) {
+				span[i]++;
+				j--;
+			}
+		}
+		printArray(span);
+	}
+	
+	public void stockSpan2(int[] stocks, int[] span) {
+		Stack<Integer> stack = new Stack<>();
+		span[0] = 1;
+		stack.push(0);
+		for (int i = 1; i < stocks.length; i++) {
+			while (!stack.isEmpty() && stocks[i] > stocks[stack.peek()]) {
+				stack.pop();
+			}
+			if (stack.isEmpty()) {
+				span[i] = i+1;
+			}
+			else {
+				span[i] = i-stack.peek();
+			}
+			stack.push(i);
+		}
+		printArray(span);
+	}
+	
+	public void printArray(int[] arr) {
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+	
 	
 	
 	
