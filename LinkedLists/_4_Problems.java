@@ -80,6 +80,17 @@ class LinkedList4 extends LinkedList {
 		first = prev;
 	}
 	
+	public Node reverse(Node head) {
+	    if (head == null || head.next == null) {
+	    	return head;
+	    }
+	    Node second = head.next;
+	    Node rest = reverse(second);
+	    second.next = head;
+	    head.next  = null;
+	    return rest;
+	}
+	
 	public void deleteAlternate() {
 		if (first == null) {
 			return;
