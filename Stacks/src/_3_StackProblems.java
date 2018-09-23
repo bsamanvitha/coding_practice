@@ -130,6 +130,37 @@ class Stack2 extends _2_LinkedListStack {
 		}
 	}
 	
+	public boolean balancedParen(String s) {
+		if (s.equals("")) {
+			return false;
+		}
+		String[] braces = {"[", "{", "(", "]", "}", ")"};
+		Stack<String> stack = new Stack<>();
+		for (int i = 0; i < s.length(); i++) {
+			if (s.substring(i, i+1).equals(braces[0]) || s.substring(i, i+1).equals(braces[1]) || s.substring(i, i+1).equals(braces[2])) {	//opening
+				stack.push(s.substring(i, i+1));
+			}
+			else if (s.substring(i, i+1).equals("}") || s.substring(i, i+1).equals("]") || s.substring(i, i+1).equals(")")) {
+				if (stack.isEmpty()) {
+					return false;
+				}
+				else if (s.substring(i, i+1).equals("}") && !stack.pop().equals("{")) {
+					return false;
+				}
+				else if (s.substring(i, i+1).equals(")") && !stack.pop().equals("(")) {
+					return false;
+				}
+				else if (s.substring(i, i+1).equals("]") && !stack.pop().equals("[")) {
+					return false;
+				}
+			}
+		}
+		if (stack.isEmpty()) {
+			return true;
+		}
+		return false;
+	}
+	
 	
 	
 	
