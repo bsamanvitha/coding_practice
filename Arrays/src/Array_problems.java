@@ -1,10 +1,18 @@
+import java.util.Arrays;
 
 public class Array_problems {
 	
 	public static void main(String[] args) {
-		int num[] = {0, 5, 6, 2, 4, 3};
+		int num[] = {1, 4, 0, 0, 3, 10, 5};
+		System.out.print(Arrays.toString(findSum(num, 7)));
+		/**
 		printArray(num);
 		printArray(arrangeArray(num));
+		int[] num2 = {1, 2, 3};
+		printArray(num2);
+		rotate(num2, 1);
+		printArray(num2);
+		**/
 	}
 	
 	// input - array of integers
@@ -47,5 +55,38 @@ public class Array_problems {
 			}
 		}
 	}
+
+	public static void rotate(int[] nums, int k) {
+		if (k > nums.length) k = nums.length - 1;
+        int p = nums.length-k;
+        int j = 1;
+        while (p != nums.length) {
+            int store = nums[p];
+            for (int i = p; i >= j; i--) {
+                nums[i] = nums[i-1];
+            }
+            nums[j-1] = store;
+            j++;
+            p++;
+        }      
+    }
+	
+	// Find subarray with given sum
+	public static int[] findSum(int[] arr, int sum) {
+		int total_sum = arr[0];
+		int start = 0;
+		for (int i = 1; i < arr.length; i++) {
+			while (total_sum > sum) {
+				total_sum -= arr[start]; 
+				start++;
+			}
+			if (total_sum == sum) {
+				return Arrays.copyOfRange(arr, start, i);
+			}
+			total_sum += arr[i];
+		}
+		return null;
+	}
+	
 	
 }
